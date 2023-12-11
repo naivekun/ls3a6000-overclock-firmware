@@ -4,6 +4,8 @@
 
 These BIOS firmware patched the `PLL(0x1fe001b0)` configuration and adjust the `Main Clock` parameters in PreSecMain module, which slightly increase the CPU frequency.
 
+Detailed blog can be found at https://naivekun.com/2023/12/loongson-3a6000-overclock/
+
 |      File name      |Main Clock|CPU Clock|HTcore Clock|
 |---------|----------|---------|---------|
 |bios_backup.bin|2500Mhz|2500Mhz|1250Mhz|
