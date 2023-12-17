@@ -2,18 +2,43 @@
 
 ## Introduction
 
-These BIOS firmware patched the `PLL(0x1fe001b0)` configuration and adjust the `Main Clock` parameters in PreSecMain module, which slightly increase the CPU frequency.
+These BIOS firmware modded two modules
 
-Detailed blog can be found at https://naivekun.com/2023/12/loongson-3a6000-overclock/
+* XA61200OverclockPeim
+* XA61200OverclockShellCommand
 
-|      File name      |Main Clock|CPU Clock|HTcore Clock|
-|---------|----------|---------|---------|
-|bios_backup.bin|2500Mhz|2500Mhz|1250Mhz|
-|bios_boost2600.bin|2600Mhz|2600Mhz|975Mhz|
-|bios_boost2700.bin|2700Mhz|2700Mhz|1012.5Mhz|
+the `XA61200OverclockPeim` module execute in early PEI stage and read overclock settings from EFI Variable. If EFI Variable `LsOcConf` is valid and overclock is enabled, CPU core voltage and Main Clock frequency will be set here.
+
+the `XA61200OverclockShellCommand` register a `overclock` command in EFI shell, provide command options below
+
+```
+# print current overclock settings
+Shell> overclock -p
+Overclock status: ENABLE
+Overclock frequency: 2700 Mhz
+Overclock voltage: 1200 mV
+
+# enable overclock
+Shell> overclock -e 1
+
+# disable overclock
+Shell> overclock -e 0
+
+# set overclock frequency (Mhz)
+Shell> overclock -f 2700
+
+# set overclock voltage (mV)
+Shell> overclock -v 1200
+```
+
+## Files
+
+* `Loongson-XA61200-UDK2018-V4.0.05494-stable202305-overclock.bin`: This BIOS included overclock modding
+* `Loongson-XA61200-UDK2018-V4.0.05494-stable202305.bin`: This BIOS is the original backup of my board
 
 ## Usage
 
+0. backup your BIOS via SPI Flash Programmer
 1. Format a USB drive with FAT32 partition
 2. Copy BIOS firmware to the USB drive
 3. Insert your USB drive, power on motherboard
