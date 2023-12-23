@@ -15,13 +15,14 @@ the `XA61200OverclockShellCommand` register a `overclock` command in EFI shell, 
 
 ## Files
 
-`UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311dbg-overclock-v2.fd` is **recommended** to use
+`UDK2018_3A6000-7A2000_Desktop_EVB_V4.0.05636-stable202311_dbg-overclock.fd` is **recommended** to use
 
 * `Loongson-XA61200-UDK2018-V4.0.05494-stable202305-overclock-sa.bin`: This BIOS included overclock modding and support sa voltage adjustment
 * `Loongson-XA61200-UDK2018-V4.0.05494-stable202305-overclock.bin`: This BIOS included overclock modding, only support core voltage adjustment
 * `Loongson-XA61200-UDK2018-V4.0.05494-stable202305.bin`: This BIOS is the original backup of my board
-* `UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311dbg-overclock.fd`: This BIOS is the 2023/11 version with overclock modding
-* `UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311dbg-overclock-v2.fd`: This BIOS is the 2023/11 version with advanced clock and overclock modding
+* `UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311dbg-overclock.fd`: This BIOS is the 2023/11-5634 version with overclock modding
+* `UDK2018-3A6000-7A2000_EVB_V4.0.05634_prestable2311dbg-overclock-v2.fd`: This BIOS is the 2023/11-5634 version with advanced clock and overclock modding
+* `UDK2018_3A6000-7A2000_Desktop_EVB_V4.0.05636-stable202311_dbg-overclock.fd`: This BIOS is the 2023/11-5636 version with advanced clock and overclock modding
 
 ## Usage
 
